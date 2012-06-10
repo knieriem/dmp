@@ -11,7 +11,11 @@ runewise (rather than bytewise).  Perhaps it would be preferable
 to use `[]rune` instead of `string`, but this hasn't been
 tried yet.
 
-The performance is similar to that of the Qt based C++ implementation,
-but slower than the Java port.
+The performance on i386 system lies between that of the Java
+and the Qt based C++ implementations.
+On amd64 systems the Go port is as fast as the Java
+implementation (the 6g compiler is able to generate faster code
+than 8g, because of the larger number of available registers on 64bit
+processors).
 
 [dmp]:	http://code.google.com/p/google-diff-match-patch/

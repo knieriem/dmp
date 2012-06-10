@@ -70,6 +70,7 @@ func DiffMain(text1, text2 string, checkLines bool, timeout time.Duration) Diffs
 		d.deadLine = time.Now().Add(timeout)
 	}
 	d.diffMain(text1, text2, checkLines)
+	d.CleanupMerge()
 	return d.Diffs
 }
 
@@ -105,8 +106,6 @@ func (d *differ) diffMain(text1, text2 string, checkLines bool) {
 	if commonSfx != "" {
 		d.add(Equal, commonSfx)
 	}
-
-	d.CleanupMerge()
 	return
 }
 
