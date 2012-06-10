@@ -232,7 +232,7 @@ func (d *differ) bisect(text1, text2 *IRstring) {
 
 	// If the total number of characters is odd, then the front path will
 	// collide with the reverse path.
-	front := Δ%2 != 0
+	front := isOdd(Δ)
 
 	// Offsets for start and end of k loop.
 	// Prevents mapping of space beyond the grid.

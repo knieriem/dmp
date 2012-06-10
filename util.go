@@ -110,6 +110,11 @@ func max(n1, n2 int) int {
 	return n2
 }
 
+func isOdd(v int) bool {
+	return v&1 != 0
+}
+
+
 // Create a slice s[i0:], taking care that i0
 // points to the start of a character. Decrease
 // i0 until this condition is met.
